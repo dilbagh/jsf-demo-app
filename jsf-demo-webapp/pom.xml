@@ -10,4 +10,37 @@
 	<artifactId>jsf-demo-webapp</artifactId>
 	<packaging>war</packaging>
 	<name>JSF Demo Application Webapp</name>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jsf-demo-jee-webapp</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jsf-demo-jee-webapp</artifactId>
+			<version>${project.version}</version>
+			<classifier>classes</classifier>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>jsf-demo</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<overlays>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>jsf-demo-jee-webapp</artifactId>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

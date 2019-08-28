@@ -10,4 +10,18 @@
 	<artifactId>jsf-demo-jee-webapp</artifactId>
 	<packaging>war</packaging>
 	<name>JSF Demo Application Webapp for JEE Servers</name>
+	<build>
+		<finalName>jsf-demo</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<attachClasses>true</attachClasses>
+					<classesClassifier>classes</classesClassifier>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
